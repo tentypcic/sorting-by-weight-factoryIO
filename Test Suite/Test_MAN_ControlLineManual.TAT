@@ -1,0 +1,105 @@
+TEST_CASE "Test_MAN_ControlLineManual"
+
+PROPERTY
+AUTHOR : ""
+VERSION : "0.1"
+COMMENT : ""
+SCOPE : "PLC_1"
+END_PROPERTY
+
+VAR
+  Start : "TST_ControlLineData".inStart;
+  Stop : "TST_ControlLineData".inStop := true; //NC
+  Manual : "TST_ControlLineData".inManual;
+  Error : "TST_ControlLineData".inGlobalError;
+  RunLine : "TST_ControlLineData".inRunLine;
+  
+  StartLine : "TST_ControlLineData".StartLine;
+  StopLine : "TST_ControlLineData".StopLine;
+  AlarmSiren : "TST_ControlLineData".StartAlarmSiren;
+END_VAR
+
+STEP: "Start Line without Mode"
+  Start := true;
+  
+  RUN(CYCLES := 2);
+  ASSERT.Equal(StopLine, true);
+  
+  ASSERT.Equal(StartLine, false);
+  ASSERT.Equal(AlarmSiren, false);
+END_STEP
+
+STEP: "Release the start button"
+Start := false;
+
+RUN(CYCLES := 1);
+END_STEP 
+
+STEP: "Start Line with Error"
+Start := true;
+Manual := true;
+Error := true;
+
+RUN(CYCLES := 2);
+ASSERT.Equal(StopLine, true);
+
+ASSERT.Equal(StartLine, false);
+ASSERT.Equal(AlarmSiren, false);
+END_STEP
+
+STEP: "Release the start button again"
+Start := false;
+
+RUN(CYCLES := 1);
+END_STEP
+
+STEP: "Start Line"
+Start := true;
+Error := false;
+
+RUN(CYCLES := 10);
+ASSERT.Equal(StartLine, true);
+
+ASSERT.Equal(StopLine, false);
+ASSERT.Equal(AlarmSiren, false);
+END_STEP
+
+STEP: "StopLine"
+Stop := false; //NC
+
+RUN(CYCLES := 2);
+ASSERT.Equal(StopLine, true);
+
+ASSERT.Equal(StartLine, false);
+ASSERT.Equal(AlarmSiren, false);
+END_STEP
+
+STEP: "Release the start button again 2"
+Start := false;
+
+RUN(CYCLES := 1);
+END_STEP
+
+STEP: "Start Line again"
+Start := true;
+Stop := true;
+
+RUN(CYCLES := 2);
+ASSERT.Equal(StartLine, true);
+
+ASSERT.Equal(StopLine, false);
+ASSERT.Equal(AlarmSiren, false);
+END_STEP
+
+STEP: "Stop Line because Error"
+Error := true;
+
+RUN(CYCLES := 2);
+ASSERT.Equal(StopLine, true);
+
+ASSERT.Equal(StartLine, false);
+ASSERT.Equal(AlarmSiren, false);
+END_STEP
+
+END_TEST_CASE
+

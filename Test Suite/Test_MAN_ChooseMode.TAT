@@ -1,0 +1,50 @@
+TEST_CASE "Test_MAN_ChooseMode"
+
+PROPERTY
+AUTHOR : ""
+VERSION : "0.1"
+COMMENT : ""
+SCOPE : "PLC_1"
+END_PROPERTY
+
+VAR
+  Auto : "TST_ChooseModeData".inAuto;
+  Manual : "TST_ChooseModeData".inManual;
+
+  ModeAuto : "TST_ChooseModeData".Auto;
+  ModeManual : "TST_ChooseModeData".Manual;
+
+END_VAR
+
+STEP: "Default"
+
+  RUN(CYCLES := 2);
+
+  ASSERT.Equal(ModeAuto, false);
+  ASSERT.Equal(ModeManual, false);
+
+END_STEP
+
+STEP: "Choose Auto"
+  Auto := true;
+
+  RUN(CYCLES := 2);
+
+  ASSERT.Equal(ModeAuto, true);
+  ASSERT.Equal(ModeManual, false);
+
+END_STEP
+
+STEP: "Choose Manual"
+  Manual := true;
+  Auto := false;
+  
+  RUN(CYCLES := 2);
+
+  ASSERT.Equal(ModeAuto, false);
+  ASSERT.Equal(ModeManual, true);
+
+END_STEP
+
+END_TEST_CASE
+

@@ -1,0 +1,63 @@
+TEST_CASE "Test_MAN_ControlLineAuto"
+
+PROPERTY
+AUTHOR : ""
+VERSION : "0.1"
+COMMENT : ""
+SCOPE : "PLC_1"
+END_PROPERTY
+
+VAR
+  Start : "TST_ControlLineData".inStart;
+  Stop : "TST_ControlLineData".inStop := true; //NC
+  Auto : "TST_ControlLineData".inAuto;
+  Error : "TST_ControlLineData".inGlobalError;
+  
+  StartLine : "TST_ControlLineData".StartLine;
+  StopLine : "TST_ControlLineData".StopLine;
+  AlarmSiren : "TST_ControlLineData".StartAlarmSiren;
+
+END_VAR
+
+STEP: "Choice Auto"
+  Auto := true;
+  
+  RUN(CYCLES := 2);
+  ASSERT.Equal(AlarmSiren, false);
+  ASSERT.Equal(StartLine, false);
+  ASSERT.Equal(StopLine, true);
+
+END_STEP
+
+STEP: "Start Alarm Siren"
+  Start := true;
+
+  RUN(TIME := T#3s);
+  ASSERT.Equal(AlarmSiren, true);
+  ASSERT.Equal(StartLine, false);
+  ASSERT.Equal(StopLine, false);
+
+END_STEP
+
+STEP: "Start Line"
+
+  RUN(TIME := T#3s);
+  
+  ASSERT.Equal(AlarmSiren, false);
+  ASSERT.Equal(StartLine, true);
+  ASSERT.Equal(StopLine, false);
+
+END_STEP
+
+STEP: "StopLine"
+  Stop := false; //NC
+  
+  RUN(CYCLES := 10);
+  ASSERT.Equal(StopLine, true);
+  ASSERT.Equal(StartLine, false);
+  ASSERT.Equal(AlarmSiren, false);
+
+END_STEP
+
+END_TEST_CASE
+
