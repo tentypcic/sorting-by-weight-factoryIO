@@ -1,0 +1,51 @@
+﻿FUNCTION_BLOCK "HW_MovingAverageFilter"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      Start : Bool;
+      Samples : Int;
+      Weight : Real;
+   END_VAR
+
+   VAR_OUTPUT 
+      WeightFilter : Real;
+   END_VAR
+
+   VAR 
+      Bufor : Array[0..99] of Real;
+   END_VAR
+
+   VAR_TEMP 
+      Sum : Real;
+      index : Int;
+   END_VAR
+
+
+BEGIN
+	IF #Start THEN
+	    FOR #index := (#Samples - 2) TO 0 BY -1 DO
+	        #Bufor[#index + 1] := #Bufor[#index];
+	    END_FOR;
+	    
+	    #Bufor[0] := #Weight;
+	    #Sum := 0;
+	    
+	    FOR #index := 0 TO (#Samples - 1) DO
+	        #Sum := #Sum + #Bufor[#index];
+	    END_FOR;
+	    
+	    #WeightFilter := #Sum / #Samples;
+	ELSE
+	    #WeightFilter := 0;
+	END_IF;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+END_FUNCTION_BLOCK
+
