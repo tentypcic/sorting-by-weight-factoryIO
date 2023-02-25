@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V17" />
+  <DocumentInfo>
+    <Created>2023-02-25T15:48:36.8863132Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Test Suite Advanced</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>SIMATIC Energy Suite</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <AutoNumber>true</AutoNumber>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Temp" />
+  <Section Name="Constant" />
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" Accessibility="Public" />
+  </Section>
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>LOG_Mode</Name>
+      <Number>8</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="MAN_LineModeData" />
+        <Component Name="Start" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="MAN_LineModeData" />
+        <Component Name="Stop" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="MAN_LineModeData" />
+        <Component Name="Auto" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="HW_WeightData" />
+        <Component Name="IsSmallPackage" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="HW_WeightData" />
+        <Component Name="IsMediumPackage" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="26">
+      <Symbol>
+        <Component Name="HW_WeightData" />
+        <Component Name="IsLargePackage" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="27">
+      <Symbol>
+        <Component Name="I_D3" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="28">
+      <Symbol>
+        <Component Name="I_D4" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="I_D5" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="30">
+      <Symbol>
+        <Component Name="I_D6" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="31">
+      <Symbol>
+        <Component Name="FirstScan" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="32">
+      <Symbol>
+        <Component Name="LOG_LogicData" />
+        <Component Name="ConveyorsAuto" />
+      </Symbol>
+    </Access>
+    <Call UId="33">
+      <CallInfo Name="LOG_AutoControle" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="34">
+          <Component Name="LOG_AutoControle_DB" />
+        </Instance>
+        <Parameter Name="StartLine" Section="Input" Type="Bool" />
+        <Parameter Name="StopLine" Section="Input" Type="Bool" />
+        <Parameter Name="AutoMode" Section="Input" Type="Bool" />
+        <Parameter Name="SmallPackage" Section="Input" Type="Bool" />
+        <Parameter Name="MediumPackage" Section="Input" Type="Bool" />
+        <Parameter Name="LargePackage" Section="Input" Type="Bool" />
+        <Parameter Name="D3" Section="Input" Type="Bool" />
+        <Parameter Name="D4" Section="Input" Type="Bool" />
+        <Parameter Name="D5" Section="Input" Type="Bool" />
+        <Parameter Name="D6" Section="Input" Type="Bool" />
+        <Parameter Name="FirstScan" Section="Input" Type="Bool" />
+        <Parameter Name="ConveyorsAuto" Section="Output" Type="&quot;stt_Conveyor&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="35">
+      <Powerrail />
+      <NameCon UId="33" Name="en" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="21" />
+      <NameCon UId="33" Name="StartLine" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="22" />
+      <NameCon UId="33" Name="StopLine" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="23" />
+      <NameCon UId="33" Name="AutoMode" />
+    </Wire>
+    <Wire UId="39">
+      <IdentCon UId="24" />
+      <NameCon UId="33" Name="SmallPackage" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="25" />
+      <NameCon UId="33" Name="MediumPackage" />
+    </Wire>
+    <Wire UId="41">
+      <IdentCon UId="26" />
+      <NameCon UId="33" Name="LargePackage" />
+    </Wire>
+    <Wire UId="42">
+      <IdentCon UId="27" />
+      <NameCon UId="33" Name="D3" />
+    </Wire>
+    <Wire UId="43">
+      <IdentCon UId="28" />
+      <NameCon UId="33" Name="D4" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="29" />
+      <NameCon UId="33" Name="D5" />
+    </Wire>
+    <Wire UId="45">
+      <IdentCon UId="30" />
+      <NameCon UId="33" Name="D6" />
+    </Wire>
+    <Wire UId="46">
+      <IdentCon UId="31" />
+      <NameCon UId="33" Name="FirstScan" />
+    </Wire>
+    <Wire UId="47">
+      <NameCon UId="33" Name="ConveyorsAuto" />
+      <IdentCon UId="32" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Call: AutoControle</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="MAN_LineModeData" />
+        <Component Name="Start" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="MAN_LineModeData" />
+        <Component Name="Stop" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="MAN_LineModeData" />
+        <Component Name="Manual" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="I_C1" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="I_C2" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="26">
+      <Symbol>
+        <Component Name="I_C3" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="27">
+      <Symbol>
+        <Component Name="I_C4" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="28">
+      <Symbol>
+        <Component Name="I_W" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="I_SendLeft" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="30">
+      <Symbol>
+        <Component Name="I_SendForward" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="31">
+      <Symbol>
+        <Component Name="I_SendRight" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="32">
+      <Symbol>
+        <Component Name="LOG_LogicData" />
+        <Component Name="ConveyorsManual" />
+      </Symbol>
+    </Access>
+    <Call UId="33">
+      <CallInfo Name="LOG_ManualControle" BlockType="FC">
+        <Parameter Name="StartLine" Section="Input" Type="Bool" />
+        <Parameter Name="StopLine" Section="Input" Type="Bool" />
+        <Parameter Name="ModeManual" Section="Input" Type="Bool" />
+        <Parameter Name="T1Button" Section="Input" Type="Bool" />
+        <Parameter Name="T2Button" Section="Input" Type="Bool" />
+        <Parameter Name="T3Button" Section="Input" Type="Bool" />
+        <Parameter Name="T4Button" Section="Input" Type="Bool" />
+        <Parameter Name="WButton" Section="Input" Type="Bool" />
+        <Parameter Name="SendLeftButton" Section="Input" Type="Bool" />
+        <Parameter Name="SendForwardButton" Section="Input" Type="Bool" />
+        <Parameter Name="SendRightButton" Section="Input" Type="Bool" />
+        <Parameter Name="ConveyorsManual" Section="Output" Type="&quot;stt_Conveyor&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="34">
+      <Powerrail />
+      <NameCon UId="33" Name="en" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="21" />
+      <NameCon UId="33" Name="StartLine" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="22" />
+      <NameCon UId="33" Name="StopLine" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="23" />
+      <NameCon UId="33" Name="ModeManual" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="24" />
+      <NameCon UId="33" Name="T1Button" />
+    </Wire>
+    <Wire UId="39">
+      <IdentCon UId="25" />
+      <NameCon UId="33" Name="T2Button" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="26" />
+      <NameCon UId="33" Name="T3Button" />
+    </Wire>
+    <Wire UId="41">
+      <IdentCon UId="27" />
+      <NameCon UId="33" Name="T4Button" />
+    </Wire>
+    <Wire UId="42">
+      <IdentCon UId="28" />
+      <NameCon UId="33" Name="WButton" />
+    </Wire>
+    <Wire UId="43">
+      <IdentCon UId="29" />
+      <NameCon UId="33" Name="SendLeftButton" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="30" />
+      <NameCon UId="33" Name="SendForwardButton" />
+    </Wire>
+    <Wire UId="45">
+      <IdentCon UId="31" />
+      <NameCon UId="33" Name="SendRightButton" />
+    </Wire>
+    <Wire UId="46">
+      <NameCon UId="33" Name="ConveyorsManual" />
+      <IdentCon UId="32" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="9" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Call: ManualControle</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="LOG_LogicData" />
+        <Component Name="ConveyorsAuto" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="LOG_LogicData" />
+        <Component Name="ConveyorsManual" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="HW_HardwareData" />
+        <Component Name="C1" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="HW_HardwareData" />
+        <Component Name="C2" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="HW_HardwareData" />
+        <Component Name="C3" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="26">
+      <Symbol>
+        <Component Name="HW_HardwareData" />
+        <Component Name="C4" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="27">
+      <Symbol>
+        <Component Name="O_W" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="28">
+      <Symbol>
+        <Component Name="O_SendLeft" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="O_SendForward" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="30">
+      <Symbol>
+        <Component Name="O_SendRight" />
+      </Symbol>
+    </Access>
+    <Call UId="31">
+      <CallInfo Name="LOG_AssignmentIOMode" BlockType="FC">
+        <Parameter Name="ConveyorsAuto" Section="Input" Type="&quot;stt_Conveyor&quot;" />
+        <Parameter Name="ConveyorsManual" Section="Input" Type="&quot;stt_Conveyor&quot;" />
+        <Parameter Name="C1" Section="Output" Type="&quot;stt_Motor&quot;" />
+        <Parameter Name="C2" Section="Output" Type="&quot;stt_Motor&quot;" />
+        <Parameter Name="C3" Section="Output" Type="&quot;stt_Motor&quot;" />
+        <Parameter Name="C4" Section="Output" Type="&quot;stt_Motor&quot;" />
+        <Parameter Name="W" Section="Output" Type="Bool" />
+        <Parameter Name="SendLeft" Section="Output" Type="Bool" />
+        <Parameter Name="SendForward" Section="Output" Type="Bool" />
+        <Parameter Name="SendRight" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="32">
+      <Powerrail />
+      <NameCon UId="31" Name="en" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="21" />
+      <NameCon UId="31" Name="ConveyorsAuto" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="22" />
+      <NameCon UId="31" Name="ConveyorsManual" />
+    </Wire>
+    <Wire UId="35">
+      <NameCon UId="31" Name="C1" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="36">
+      <NameCon UId="31" Name="C2" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="31" Name="C3" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="31" Name="C4" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="31" Name="W" />
+      <IdentCon UId="27" />
+    </Wire>
+    <Wire UId="40">
+      <NameCon UId="31" Name="SendLeft" />
+      <IdentCon UId="28" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="31" Name="SendForward" />
+      <IdentCon UId="29" />
+    </Wire>
+    <Wire UId="42">
+      <NameCon UId="31" Name="SendRight" />
+      <IdentCon UId="30" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="10" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Call: AssigmentIOMode</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="12" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="13" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>
