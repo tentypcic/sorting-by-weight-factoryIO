@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V17" />
   <DocumentInfo>
-    <Created>2023-02-25T16:31:53.1733938Z</Created>
+    <Created>2023-02-26T22:28:45.1803176Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -59,7 +59,7 @@
       <IsIECCheckEnabled>false</IsIECCheckEnabled>
       <MemoryLayout>Optimized</MemoryLayout>
       <Name>LOG_ButtonsManualLight</Name>
-      <Number>9</Number>
+      <Number>15</Number>
       <ProgrammingLanguage>LAD</ProgrammingLanguage>
       <SetENOAutomatically>false</SetENOAutomatically>
       <UDABlockProperties />
