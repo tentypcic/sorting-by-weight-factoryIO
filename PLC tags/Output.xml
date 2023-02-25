@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V17" />
   <DocumentInfo>
-    <Created>2023-02-22T16:41:02.6754212Z</Created>
+    <Created>2023-02-25T14:37:14.8109943Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -51,7 +51,7 @@
           <ExternalVisible>true</ExternalVisible>
           <ExternalWritable>true</ExternalWritable>
           <LogicalAddress>%Q0.0</LogicalAddress>
-          <Name>O_C2</Name>
+          <Name>O_W</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="2" CompositionName="Comment">
@@ -552,7 +552,7 @@
       </SW.Tags.PlcTag>
       <SW.Tags.PlcTag ID="46" CompositionName="Tags">
         <AttributeList>
-          <DataTypeName>DInt</DataTypeName>
+          <DataTypeName>Real</DataTypeName>
           <ExternalAccessible>true</ExternalAccessible>
           <ExternalVisible>true</ExternalVisible>
           <ExternalWritable>true</ExternalWritable>
@@ -601,7 +601,7 @@
           <ExternalVisible>true</ExternalVisible>
           <ExternalWritable>true</ExternalWritable>
           <LogicalAddress>%QD50</LogicalAddress>
-          <Name>O_C3</Name>
+          <Name>O_C2</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="4D" CompositionName="Comment">
@@ -623,7 +623,7 @@
           <ExternalVisible>true</ExternalVisible>
           <ExternalWritable>true</ExternalWritable>
           <LogicalAddress>%QD54</LogicalAddress>
-          <Name>O_C4</Name>
+          <Name>O_C3</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="50" CompositionName="Comment">
@@ -645,7 +645,7 @@
           <ExternalVisible>true</ExternalVisible>
           <ExternalWritable>true</ExternalWritable>
           <LogicalAddress>%QD58</LogicalAddress>
-          <Name>O_C5</Name>
+          <Name>O_C4</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="53" CompositionName="Comment">
