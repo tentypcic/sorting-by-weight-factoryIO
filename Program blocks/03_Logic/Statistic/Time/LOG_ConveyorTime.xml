@@ -1,0 +1,617 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V17" />
+  <DocumentInfo>
+    <Created>2023-02-26T22:59:49.9931463Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Test Suite Advanced</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>SIMATIC Energy Suite</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <AutoNumber>true</AutoNumber>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Temp">
+    <Member Name="t_RisingTime" Datatype="Bool" />
+  </Section>
+  <Section Name="Constant" />
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" Accessibility="Public" />
+  </Section>
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>LOG_ConveyorTime</Name>
+      <Number>20</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="Clock_1Hz" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="t_RisingTime" />
+      </Symbol>
+    </Access>
+    <Part Name="R_TRIG" Version="1.0" UId="23">
+      <Instance Scope="GlobalVariable" UId="24">
+        <Component Name="R_TRIG_DB" />
+      </Instance>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="25">
+      <Powerrail />
+      <NameCon UId="23" Name="en" />
+    </Wire>
+    <Wire UId="26">
+      <IdentCon UId="21" />
+      <NameCon UId="23" Name="CLK" />
+    </Wire>
+    <Wire UId="27">
+      <NameCon UId="23" Name="Q" />
+      <IdentCon UId="22" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Trigger</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="HW_HardwareData" />
+        <Component Name="C1" />
+        <Component Name="Run" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="t_RisingTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="LOG_ConveyorWorkTime" />
+        <Component Name="T1" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="24" />
+    <Call UId="25">
+      <CallInfo Name="LOG_CalculateWorkTime" BlockType="FC">
+        <Parameter Name="Trigger" Section="Input" Type="Bool" />
+        <Parameter Name="LineTime" Section="InOut" Type="&quot;stt_TimeWork&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="26">
+      <Powerrail />
+      <NameCon UId="24" Name="in" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="21" />
+      <NameCon UId="24" Name="operand" />
+    </Wire>
+    <Wire UId="28">
+      <NameCon UId="24" Name="out" />
+      <NameCon UId="25" Name="en" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="Trigger" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="23" />
+      <NameCon UId="25" Name="LineTime" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="9" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Call: CalculateWorkTime - C1</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="HW_HardwareData" />
+        <Component Name="C2" />
+        <Component Name="Run" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="t_RisingTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="LOG_ConveyorWorkTime" />
+        <Component Name="T2" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="24" />
+    <Call UId="25">
+      <CallInfo Name="LOG_CalculateWorkTime" BlockType="FC">
+        <Parameter Name="Trigger" Section="Input" Type="Bool" />
+        <Parameter Name="LineTime" Section="InOut" Type="&quot;stt_TimeWork&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="26">
+      <Powerrail />
+      <NameCon UId="24" Name="in" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="21" />
+      <NameCon UId="24" Name="operand" />
+    </Wire>
+    <Wire UId="28">
+      <NameCon UId="24" Name="out" />
+      <NameCon UId="25" Name="en" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="Trigger" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="23" />
+      <NameCon UId="25" Name="LineTime" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="10" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Call: CalculateWorkTime - C2</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="HW_HardwareData" />
+        <Component Name="C3" />
+        <Component Name="Run" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="t_RisingTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="LOG_ConveyorWorkTime" />
+        <Component Name="T3" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="24" />
+    <Call UId="25">
+      <CallInfo Name="LOG_CalculateWorkTime" BlockType="FC">
+        <Parameter Name="Trigger" Section="Input" Type="Bool" />
+        <Parameter Name="LineTime" Section="InOut" Type="&quot;stt_TimeWork&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="26">
+      <Powerrail />
+      <NameCon UId="24" Name="in" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="21" />
+      <NameCon UId="24" Name="operand" />
+    </Wire>
+    <Wire UId="28">
+      <NameCon UId="24" Name="out" />
+      <NameCon UId="25" Name="en" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="Trigger" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="23" />
+      <NameCon UId="25" Name="LineTime" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="15" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Call: CalculateWorkTime - C3</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="17" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="HW_HardwareData" />
+        <Component Name="C4" />
+        <Component Name="Run" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="t_RisingTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="LOG_ConveyorWorkTime" />
+        <Component Name="T4" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="24" />
+    <Call UId="25">
+      <CallInfo Name="LOG_CalculateWorkTime" BlockType="FC">
+        <Parameter Name="Trigger" Section="Input" Type="Bool" />
+        <Parameter Name="LineTime" Section="InOut" Type="&quot;stt_TimeWork&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="26">
+      <Powerrail />
+      <NameCon UId="24" Name="in" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="21" />
+      <NameCon UId="24" Name="operand" />
+    </Wire>
+    <Wire UId="28">
+      <NameCon UId="24" Name="out" />
+      <NameCon UId="25" Name="en" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="Trigger" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="23" />
+      <NameCon UId="25" Name="LineTime" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="18" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1A" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Call: CalculateWorkTime - C4</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="1C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="O_W" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="t_RisingTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="LOG_ConveyorWorkTime" />
+        <Component Name="W" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="24" />
+    <Call UId="25">
+      <CallInfo Name="LOG_CalculateWorkTime" BlockType="FC">
+        <Parameter Name="Trigger" Section="Input" Type="Bool" />
+        <Parameter Name="LineTime" Section="InOut" Type="&quot;stt_TimeWork&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="26">
+      <Powerrail />
+      <NameCon UId="24" Name="in" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="21" />
+      <NameCon UId="24" Name="operand" />
+    </Wire>
+    <Wire UId="28">
+      <NameCon UId="24" Name="out" />
+      <NameCon UId="25" Name="en" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="Trigger" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="23" />
+      <NameCon UId="25" Name="LineTime" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Call: CalculateWorkTime - W</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="21" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="O_SendForward" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="t_RisingTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="LOG_ConveyorWorkTime" />
+        <Component Name="O" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="24" />
+    <Call UId="25">
+      <CallInfo Name="LOG_CalculateWorkTime" BlockType="FC">
+        <Parameter Name="Trigger" Section="Input" Type="Bool" />
+        <Parameter Name="LineTime" Section="InOut" Type="&quot;stt_TimeWork&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="26">
+      <Powerrail />
+      <NameCon UId="24" Name="in" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="21" />
+      <NameCon UId="24" Name="operand" />
+    </Wire>
+    <Wire UId="28">
+      <NameCon UId="24" Name="out" />
+      <NameCon UId="25" Name="en" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="Trigger" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="23" />
+      <NameCon UId="25" Name="LineTime" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="22" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="23" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="24" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Call: CalculateWorkTime - Send</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="26" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="27" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>
