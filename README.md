@@ -3,19 +3,25 @@ Sorting by weight
 </h2>
 
 <p align="center">
-  <img width="700" height="400" src="https://github.com/tentypcic/sorting-by-weight-factoryIO/blob/main/Documantation/work-line.gif?raw=true">
+  <img width="700" height="400" src="/Documantation/images/work-line.gif">
 </p>
 
 ## Table of Contents
-* [Built With](#built-with)
-* [About The Project](#about-the-project)
-	*  [Features](#features)
-	* [Sorting line](#sorting-line)
-	* [Project tree](#project-tree)
-	*  [HMI panel](#hmi-panel)
-	* [Test Suite](#test-suite)
-	* [Filter Weight](#filter-weight)
-* [How To Use](#how-to-use)
+- [Table of Contents](#table-of-contents)
+- [Built With](#built-with)
+- [About The Project](#about-the-project)
+  - [Features](#features)
+  - [Sorting line](#sorting-line)
+  - [Project Tree](#project-tree)
+  - [Algorithm](#algorithm)
+  - [HMI panel](#hmi-panel)
+  - [Test Suite](#test-suite)
+  - [Filter Weight](#filter-weight)
+- [How To Use](#how-to-use)
+  - [Factory IO](#factory-io)
+  - [TIA Portal](#tia-portal)
+  - [Version Controle Interface](#version-controle-interface)
+  - [SIMATIC Automation Compare Tool](#simatic-automation-compare-tool)
 
 ## Built With
 This project was bult using these technologies:
@@ -46,7 +52,7 @@ Code in TIA Portal V17. The sorting line has been modelled in Factory IO 3D simu
 ### Sorting line
 
 <p align="center">
-  <img width="700" height="400" src="https://github.com/tentypcic/sorting-by-weight-factoryIO/blob/main/Documantation/line.png?raw=true">
+  <img width="700" height="400" src="/Documantation/images/line.png">
 </p>
 
 The line consists of:
@@ -62,7 +68,7 @@ The line consists of:
 
 ### Project Tree
 <p align="center">
-  <img width="380" height="400" src="https://github.com/tentypcic/sorting-by-weight-factoryIO/blob/main/Documantation/tree.png?raw=true">
+  <img width="380" height="400" src="/Documantation/images/tree.png">
 </p>
 
 The programme is structured in six layers. The structure of the programme is similat to the concepts of oop. Each layer is responsible for one main task.
@@ -74,7 +80,7 @@ Some functions use a sequential algorithm. Such algorithms have been graphically
 ### HMI panel
 
 <p align="center">
-  <img width="700" height="400" src="https://github.com/tentypcic/sorting-by-weight-factoryIO/blob/main/Documantation/hmi-panel.gif?raw=true">
+  <img width="700" height="400" src="/Documantation/images/hmi-panel.gif">
 </p>
 
 The HMI displays basic information about the sorting line. The status of the sensors, the status of the conveyors, informs about the operating modes and erros.
@@ -82,7 +88,7 @@ The HMI displays basic information about the sorting line. The status of the sen
 ### Test Suite
 
 <p align="center">
-  <img width="700" height="400" src="https://github.com/tentypcic/sorting-by-weight-factoryIO/blob/main/Documantation/test.gif?raw=true">
+  <img width="700" height="400" src="/Documantation/images/test.gif">
 </p>
 
 The programme has been tested using the Test Suite add-on, which allows unit test to be written.
@@ -90,7 +96,7 @@ The programme has been tested using the Test Suite add-on, which allows unit tes
 ### Filter Weight
 
 <p align="center">
-  <img width="700" height="400" src="https://github.com/tentypcic/sorting-by-weight-factoryIO/blob/main/Documantation/trace.gif?raw=true">
+  <img width="700" height="400" src="/Documantation/images/trace.gif">
 </p>
 
 The programme uses a moving average weighting filter. After many trials, the correct parameters such as cyclic interruption time and sampling rate were selected experimentally. By using the Trace function in the TIA it was possible to compare the signals.
@@ -128,5 +134,5 @@ On TIA v16 and later:
 You can view the functions and blocks in the .xml extension directly using the SIMATIC Automation Compare Tool software.
 
 <p align="center">
-  <img width="700" height="400" src="https://github.com/tentypcic/sorting-by-weight-factoryIO/blob/main/Documantation/act.png?raw=true">
+  <img width="700" height="400" src="/Documantation/images/act.png">
 </p>
