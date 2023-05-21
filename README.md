@@ -3,11 +3,10 @@ Sorting by weight
 </h2>
 
 <p align="center">
-  <img width="700" height="400" src="/Documentation/images/work-line.gif">
+  <img src="/Documentation/images/work-line.gif">
 </p>
 
 ## Table of Contents
-- [Table of Contents](#table-of-contents)
 - [Built With](#built-with)
 - [About The Project](#about-the-project)
   - [Features](#features)
@@ -53,7 +52,7 @@ Code in TIA Portal V17. The sorting line has been modelled in Factory IO 3D simu
 ### Sorting line
 
 <p align="center">
-  <img width="700" height="400" src="/Documentation/images/line.png">
+  <img src="/Documentation/images/line.png">
 </p>
 
 The line consists of:
@@ -69,7 +68,7 @@ The line consists of:
 
 ### Project Tree
 <p align="center">
-  <img width="380" height="400" src="/Documentation/images/tree.png">
+  <img src="/Documentation/images/tree.png">
 </p>
 
 The programme is structured in six layers. The structure of the programme is similat to the concepts of oop. Each layer is responsible for one main task.
@@ -81,7 +80,7 @@ Some functions use a sequential algorithm. Such algorithms have been graphically
 ### HMI panel
 
 <p align="center">
-  <img width="700" height="400" src="/Documentation/images/hmi-panel.gif">
+  <img src="/Documentation/images/hmi-panel.gif">
 </p>
 
 The HMI displays basic information about the sorting line. The status of the sensors, the status of the conveyors, informs about the operating modes and erros.
@@ -89,7 +88,7 @@ The HMI displays basic information about the sorting line. The status of the sen
 ### Test Suite
 
 <p align="center">
-  <img width="700" height="400" src="/Documentation/images/test.gif">
+  <img src="/Documentation/images/test.gif">
 </p>
 
 The programme has been tested using the Test Suite add-on, which allows unit test to be written.
@@ -97,7 +96,7 @@ The programme has been tested using the Test Suite add-on, which allows unit tes
 ### Filter Weight
 
 <p align="center">
-  <img width="700" height="400" src="/Documentation/images/trace.gif">
+  <img src="/Documentation/images/trace.gif">
 </p>
 
 The programme uses a moving average weighting filter. After many trials, the correct parameters such as cyclic interruption time and sampling rate were selected experimentally. By using the Trace function in the TIA it was possible to compare the signals.
@@ -127,7 +126,7 @@ On TIA v16 and later:
     # Use the Version Control Interface (VCI) in TIA to synchronise programme
 
 <p align="center">
-  <img width="700" height="400" src="https://www.dmcinfo.com/Portals/0/Siemens-VCI-image-2.png">
+  <img src="https://www.dmcinfo.com/Portals/0/Siemens-VCI-image-2.png">
 </p>
 
 ### SIMATIC Automation Compare Tool
@@ -135,7 +134,7 @@ On TIA v16 and later:
 You can view the functions and blocks in the .xml extension directly using the SIMATIC Automation Compare Tool software.
 
 <p align="center">
-  <img width="700" height="400" src="/Documentation/images/act.png">
+  <img src="/Documentation/images/act.png">
 </p>
 
 ## License
