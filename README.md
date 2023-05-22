@@ -5,6 +5,14 @@ Sorting by weight
 <p align="center">
   <img src="/Documentation/images/work-line.gif">
 </p>
+<p align="center">
+    <br>
+    Project code in TIA Portal and model in FacotryIO.
+    <br />
+    <a href="https://plc-programme-viewer.000webhostapp.com/sbw">View demo</a>
+    ·
+    <a href="https://github.com/tentypcic/sorting-by-weight-factoryIO/issues">Report Bug</a>
+</p>
 
 ## Table of Contents
 - [Built With](#built-with)
